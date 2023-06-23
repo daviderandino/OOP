@@ -5,6 +5,6 @@ subTopics è una lista di oggetti di tipo Topic, la voglio ritornare ordinata ut
 
 public List<Topic> getSubTopics() {
 		 return subTopics.stream()
-	                .sorted(Comparator.comparing(Topic::getKeyword, String.CASE_INSENSITIVE_ORDER))
+	                .sorted(Comparator.comparing(Topic::getKeyword))
 	                .collect(Collectors.toList());
 	}
