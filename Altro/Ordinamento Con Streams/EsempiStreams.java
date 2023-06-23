@@ -8,3 +8,14 @@ public List<Topic> getSubTopics() {
 	                .sorted(Comparator.comparing(Topic::getKeyword))
 	                .collect(Collectors.toList());
 	}
+
+/*
+Filtraggio per parametri
+*/
+
+public Collection<String> getStudents(double inf, double sup){
+    	return students.values().stream()
+                .filter(student -> student.getGradeAverage() >= inf && student.getGradeAverage() <= sup)
+                .map(Student::getName)
+                .collect(Collectors.toList());
+    }
